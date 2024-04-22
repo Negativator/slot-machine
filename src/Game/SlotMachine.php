@@ -20,7 +20,7 @@ class SlotMachine
         $reels = $config->getConfigKey('reels');
         $tiles = $config->getConfigKey('tiles');
 
-        $board = (new BoardGenerator())->generate($reels, $tiles);
+        $board = (new BoardGenerator())->generate($reels, $tiles, 3);
 
         $lines = $config->getConfigKey('lines');
         $payLines = new WinPatternsModel();

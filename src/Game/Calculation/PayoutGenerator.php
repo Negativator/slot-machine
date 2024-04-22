@@ -14,12 +14,16 @@ class PayoutGenerator
         $payout = 0;
 
 
+        // convert floating point number to an int, safe check for money operation;
+        $stake = $stake * 100;
+
         /** @var $winLine @see WinLineModel->toArray() */
         foreach ($winLines as $winLine) {
             $multiplier = $payTableMap[$winLine['tileId']][$winLine['total']];
             $payout += $stake * $multiplier;
         }
 
-        return $payout;
+        // return float
+        return $payout / 100;
     }
 }
