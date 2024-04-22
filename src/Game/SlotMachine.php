@@ -35,12 +35,6 @@ class SlotMachine
         // visualize board with replaced mystery
 //        (new ConsoleTableGenerator())->generate($board->getBoardWithReplacedTiles());
 
-        var_dump([
-            'board' => $board->getBoard(),
-            'replacedMysteries' => $board->getReplacedMysteryTiles(),
-            'winLines' => $winLines,
-            'payout' => number_format($payout, 2, '.', ''),
-        ]);
         return [
             'board' => $board->getBoard(),
             'replacedMysteries' => $board->getReplacedMysteryTiles(),
